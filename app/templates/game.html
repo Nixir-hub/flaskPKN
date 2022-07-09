@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="card" style="width: auto;">
+                <div class="card-body center">
+                    <h5 class="card-title">Gra w kamień, papier, nożyce</h5>
+                    <h4>Gracz: {{ session['name'] }}</h4>
+                        <h4>Punkty: {{player.points}} </h4>
+                    <form id="form" method="POST" enctype="multipart/form-data">
+                         <label for="sign">Wybierz:</label>
+                            <select name="sign" id="sign">
+                              <option value="1" >Papier</option>
+                              <option value="2" selected>Kamień</option>
+                              <option value="3">Nożyce</option>
+                            </select>
+
+                        {% if player.points != 0 %}
+                        <button form="form" type="submit" class="btn btn-primary btn-block">Start!</button>
+                        {% else %}
+                        <a href="{{ url_for('charge_view') }}"  type="button" class="btn btn-primary btn-block" >Doładuj punkty</a>
+                        {% endif %}
+                    </form>
+                </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card" style="width: auto;">
+                <div class="card-body center">
+                    <h5 class="game">Punkty gracza przed grą: {{game.player_points}}</h5>
+                    <h5 class="player">Punkty gracza po grze: {{player.points}}</h5>
+                    <h5 class="card-title">Wynik</h5>
+                        <h4 class="game">{{game.result}}</h4>
+                        <form method="get">
+                            <button type="submit" class="btn btn-primary btn-block">Graj dalej</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

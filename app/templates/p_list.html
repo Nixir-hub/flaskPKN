@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-6">Gracze</h1>
+            </div>
+        </div>
+    <ul class="container">
+        {%for item in object_list %}
+            <li class="list-group-item">
+            <div class="container row col-sm-6" >
+                 <div class="card text-center" style="width: 18rem;">
+                     <div class="card-body">
+                         <h5 class="card-title">{{ item.name }}</h5>
+                     </div>
+                </div>
+            </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

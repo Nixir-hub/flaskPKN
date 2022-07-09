@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-6">Historia Gier</h1>
+            </div>
+        </div>
+    <ul class="container">
+        {%for item in object_list %}
+            <li class="list-group-item">
+            <div class="container row col-sm-6" >
+                 <div class="card text-center" style="width: 18rem;">
+                     <div class="card-body">
+                         <h5 class="card-title">Numer gry: {{ item.id }}</h5>
+                         <h5 class="card-title">Gracz nr: {{ item.player_id }}</h5>
+                         <h5 class="card-title">Data i godzina: {{ item.game_datetime }}</h5>
+                         <h5 class="card-title">Wynik: {{ item.result }}</h5>
+                         <h5 class="card-title">Punkty Gracza przed rozgrywka: {{ item.player_points }}</h5>
+                     </div>
+                </div>
+            </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
