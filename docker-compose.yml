@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    build: ./app
+    container_name: "flaskPKN"
+    links:
+      - db
+    ports:
+      - "5000:5000"
+  db:
+    container_name: sqlite3_container
+    image: nouchka/sqlite3:latest
+    volumes:
+      - .:/docker-entrypoint-initdb.d/:ro
+    ports:
+      - '32000:3306'
